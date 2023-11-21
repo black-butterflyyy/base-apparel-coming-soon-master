@@ -6,7 +6,7 @@ const validateForm = (e) => {
   const email = document.querySelector('#email-input').value;
   const p = document.querySelector('.validation-message');
 
-  if (email === '' || !validateEmail(email)) {
+  if (!validateEmail(email)) {
     const icon = createErrorIcon();
     const formGroup = document.querySelector('.form-group');
     formGroup.classList.add('invalidate');
