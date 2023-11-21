@@ -1,0 +1,168 @@
+﻿/* variables */
+:root {
+  --primary-color: hsl(0, 36%, 70%);
+  --secondary-color: hsl(0, 93%, 68%);
+  --primary-gradient: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+  --secondary-gradient: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
+}
+
+/* css reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* main styles */
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-weight: 300;
+  letter-spacing: 10px;
+  font-size: 4rem;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+
+.container {
+  background: var(--primary-gradient);
+  text-align: center;
+}
+
+/* header section */
+.header {
+  text-align: left;
+}
+
+.logo {
+  padding: 2rem;
+}
+
+/* hero section */
+.hero__image {
+  width: 100%;
+  height: 100%;
+}
+
+/* info section */
+.info {
+  padding: 5rem 2rem;
+}
+
+.info__heading {
+  color: hsl(0, 6%, 24%);
+  font-weight: 600;
+}
+
+.info__text {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+/* form */
+.form-group {
+  position: relative;
+}
+
+.icon-arrow {
+  background: var(--secondary-gradient);
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 22px 32px 23px 36px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 15px 50px var(--primary-color);
+}
+
+.icon-error {
+  position: absolute;
+  right: 30%;
+  top: 20%;
+}
+
+.info input {
+  width: 100%;
+  padding: 24px 32px;
+  border-radius: 50px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.invalidate input {
+  border: 2px solid var(--secondary-color);
+}
+
+.validation-message {
+  color: var(--secondary-color);
+  padding-left: 3rem;
+  text-align: left;
+}
+
+::placeholder {
+  color: var(--primary-color);
+  opacity: 0.8;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+/* Desktop version */
+@media all and (min-width: 1024px) {
+  .container {
+    background: url('../images/bg-pattern-desktop.svg');
+    background-repeat: repeat;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    grid-template-rows: 1fr;
+  }
+
+  .header {
+    padding: 0 0 0 7rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .logo {
+    padding: 2rem 0 2rem 0;
+  }
+
+  .hero {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .info {
+    text-align: left;
+    margin-top: 8rem;
+    padding: 5rem 10rem 5rem 7rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .icon-arrow {
+    padding: 21px 40px 23px 45px;
+  }
+
+  .icon-error {
+    right: 22%;
+    top: 20%;
+  }
+}
